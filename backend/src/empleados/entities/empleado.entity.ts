@@ -95,6 +95,8 @@ export class Empleado {
 
   @Column({ type: 'date', nullable: true })
   fechaSalida: string | null;
+  @Column({ type: 'text', nullable: true })
+  motivoSalida: string | null;
 
   @Column({
     type: 'enum',

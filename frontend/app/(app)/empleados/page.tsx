@@ -1,11 +1,21 @@
+import Link from "next/link";
+import { Plus } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
-import { Card } from "@/components/ui/card";
+import EmpleadosManager from "@/components/empleados/EmpleadosManager";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Page() {
   return (
     <div className="p-8 space-y-8">
-      <PageHeader title="Empleados" description="Expedientes digitales del personal" />
-      <Card className="rounded-2xl p-6 shadow-sm text-muted-foreground">Próximamente.</Card>
+      <PageHeader
+        title="Empleados"
+        description="Expedientes digitales del personal"
+      >
+        <Link href="/empleados/nuevo" className={buttonVariants()}>
+          <Plus /> Nuevo empleado
+        </Link>
+      </PageHeader>
+      <EmpleadosManager />
     </div>
   );
 }
